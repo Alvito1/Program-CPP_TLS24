@@ -1,0 +1,44 @@
+#include <iostream>  // Untuk input dan output
+#include <iomanip>   // Untuk mengatur format output
+#include <limits>    // Untuk batasan input
+
+using namespace std;
+
+// Fungsi untuk mengkonversi Celsius ke Fahrenheit
+double celsiusToFahrenheit(double celsius) {
+    return (celsius * 9.0 / 5.0) + 32.0;
+}
+
+// Fungsi untuk mengkonversi Fahrenheit ke Celsius
+double fahrenheitToCelsius(double fahrenheit) {
+    return (fahrenheit - 32.0) * 5.0 / 9.0;
+}
+
+int main() {
+    double suhu;
+    char pilihan;
+    
+    cout << "=== Program Konversi Suhu ===" << endl;
+    cout << "Pilih konversi:" << endl;
+    cout << "1. Celsius ke Fahrenheit" << endl;
+    cout << "2. Fahrenheit ke Celsius" << endl;
+    cout << "Masukkan pilihan (1/2): ";
+    cin >> pilihan;
+
+    // Memeriksa input pilihan
+    if (pilihan == '1') {
+        cout << "Masukkan suhu dalam Celsius: ";
+        cin >> suhu;
+        cout << fixed << setprecision(2); // Mengatur format output
+        cout << suhu << " °C = " << celsiusToFahrenheit(suhu) << " °F" << endl;
+    } else if (pilihan == '2') {
+        cout << "Masukkan suhu dalam Fahrenheit: ";
+        cin >> suhu;
+        cout << fixed << setprecision(2); // Mengatur format output
+        cout << suhu << " °F = " << fahrenheitToCelsius(suhu) << " °C" << endl;
+    } else {
+        cout << "Pilihan tidak valid!" << endl; 
+    }
+
+    return 0;
+}
